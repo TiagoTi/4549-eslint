@@ -1,4 +1,4 @@
-import { Schema, model } from "mongoose";
+import { Schema, model } from 'mongoose';
 
 const EmployeSchema = new Schema({
   name: { type: String },
@@ -8,4 +8,4 @@ const EmployeSchema = new Schema({
   companyName: { type: String },
 }, {timestamps: true});
 
-export default model("Employe", EmployeSchema);
+export default model('Employe', EmployeSchema);

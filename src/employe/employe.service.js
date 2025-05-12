@@ -1,4 +1,4 @@
-import EmployeModel from "../schemas/employe.schema.js";
+import EmployeModel from '../schemas/employe.schema.js';
 
 const createEmploye = async (data) => {
   const newEmploye = await EmployeModel.create(data);

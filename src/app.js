@@ -1,8 +1,8 @@
-import express from "express";
-import mongoose from "mongoose";
+import express from 'express';
+import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import { createClient } from "redis";
-import employeController from "./employe/employe.controller.js";
+import { createClient } from 'redis';
+import employeController from './employe/employe.controller.js';
 
 dotenv.config();
 
@@ -12,7 +12,7 @@ const mongoConnection = async () => {
       await mongoose.connect( process.env.MONGODB_URL );
     console.log('Connected to MongoDB');
   } catch (error) {
-    console.error("Error connecting to MongoDB",   error.message);
+    console.error('Error connecting to MongoDB',   error.message);
   }
 };
 
@@ -22,7 +22,7 @@ const redisConnection = async () => {
   });
   try {
     await redisClient.connect();
-    console.log( "Connected to Redis");
+    console.log( 'Connected to Redis');
   } catch (error) {
     console.error('Error connecting to redis', error.message);
   }
