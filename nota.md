@@ -52,3 +52,8 @@ found 0 vulnerabilities
 Successfully created /home/tiago/projects/alura/4549-eslint/eslint.config.js file.
 ```
 
+
+---
+
+mongosh --host 192.168.10.5 --port 27017 --username mongouser --password xxxxxxx 
+

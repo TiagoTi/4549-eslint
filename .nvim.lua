@@ -23,8 +23,13 @@ vim.cmd([[
 ]])
 
 vim.api.nvim_create_autocmd("BufWritePost", {
-  pattern = "src/*.ts",
-  command = [[!yarn jest --testTimeout=500 --retryTimes=1 --coverage --passWithNoTests]],
+  pattern = "src/*.js",
+  command = [[!npx eslint src/*]],
+})
+
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "src/*.js",
+  command = [[!npx jest --coverage test/*]],
 })
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "test/*.ts",

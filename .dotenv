@@ -1,0 +1,9 @@
+
+export MONGODB_URL='mongodb://usr_tester:pass@192.168.10.5:27017/eslint-tutorial-test?retryWrites=true&w=majority&authSource=eslint-tutorial-test'
+export REDIS_HOST='192.168.10.4'
+export REDIS_PORT='6379'
+export PORT=3003
+
+function dev(){
+  npx nodemon src/app.js
+}
