@@ -14,6 +14,7 @@ export default defineConfig([
     rules: {
       'semi' : ['error', 'always'],
       'quotes': ['error', 'single'],
+      'indent': ['error', 2],
     }
   },
   { files: ['**/*.{js,mjs,cjs}'], languageOptions: { globals: globals.node } },

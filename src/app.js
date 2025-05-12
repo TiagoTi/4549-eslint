@@ -8,8 +8,8 @@ dotenv.config();
 
 
 const mongoConnection = async () => {
-    try {
-      await mongoose.connect( process.env.MONGODB_URL );
+  try {
+    await mongoose.connect( process.env.MONGODB_URL );
     console.log('Connected to MongoDB');
   } catch (error) {
     console.error('Error connecting to MongoDB',   error.message);
@@ -18,7 +18,7 @@ const mongoConnection = async () => {
 
 const redisConnection = async () => {
   const redisClient = createClient({
-        url: `redis://${process.env.REDIS_HOST}:${ process.env.REDIS_PORT}`,
+    url: `redis://${process.env.REDIS_HOST}:${ process.env.REDIS_PORT}`,
   });
   try {
     await redisClient.connect();
@@ -28,7 +28,7 @@ const redisConnection = async () => {
   }
 };
 
-    const app = express();
+const app = express();
 
 
 mongoConnection();
@@ -37,13 +37,13 @@ const redisClient = await redisConnection();
 app.use(express.json());
 
 
-  app.use(employeController( redisClient));
+app.use(employeController( redisClient));
 
-  const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });
 
 export { app, redisClient };
