@@ -7,7 +7,7 @@ import { defineConfig } from 'eslint/config';
 
 
 export default defineConfig([
-  { 
+  {
     files: ['**/*.{js,mjs,cjs}'],
     plugins: { js },
     extends: ['js/recommended'],
@@ -15,6 +15,7 @@ export default defineConfig([
       'semi' : ['error', 'always'],
       'quotes': ['error', 'single'],
       'indent': ['error', 2],
+      'no-trailing-spaces': 'error',
     }
   },
   { files: ['**/*.{js,mjs,cjs}'], languageOptions: { globals: globals.node } },
